@@ -40,10 +40,10 @@ export default class App extends Component {
       <>
         <form onSubmit={this.onSubmitHandler}>
           <input type="text" value={this.state.inputValue} onChange={this.onChangeHandler}></input>
-          <button type="submit"> Submit </button>
+          <button type="submit"> Add To-Do </button>
         </form>
-        <ol>{this.state.listOfToDo.map((todo) => {
-          return <li>{todo}</li>
+        <ol>{this.state.listOfToDo.map((todo, index) => {
+          return <li key={index}> {todo} </li>
         })}</ol>
       </>
     );
