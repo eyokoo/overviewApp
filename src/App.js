@@ -39,11 +39,12 @@ export default class App extends Component {
     return (
       <>
         <form onSubmit={this.onSubmitHandler}>
-          <input type="text" value={this.state.inputValue} onChange={this.onChangeHandler} />
+          <input type="text" value={this.state.inputValue} onChange={this.onChangeHandler}></input>
           <button type="submit"> Submit </button>
         </form>
-        <button onClick={this.onClickHandler}> Add To-Do </button>
-        {/* Display your todos found in your array */}
+        <ol>{this.state.listOfToDo.map((todo) => {
+          return <li>{todo}</li>
+        })}</ol>
       </>
     );
   }
